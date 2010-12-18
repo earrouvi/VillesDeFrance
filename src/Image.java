@@ -10,7 +10,7 @@ public class Image extends ImageTraitement {
 		super(w, h);
 	}
 	
-	public void greyScale(){
+	public void greyScale(String nom){
 		int w = getWidth();
 		int h = getHeight();
 		Image image2 = new Image(w, h);
@@ -26,16 +26,16 @@ public class Image extends ImageTraitement {
 				image2.setPixel(i,j,k);
 			}
 		}
-		image2.saveAsPng(nom+"_grey.png");
+		image2.saveAsPng("images/"+nom+".png");
 	}
 	
 	public boolean compareTo(Image im) {
 		int w, h;
-		w = getWidth(); h = getHeight();
+		w = im.getWidth(); h = im.getHeight();
 		
 		for (int i=0;i<w;i++) {
 			for (int j=0;j<h;j++) {
-				if (!(getPixel(i, j)[0] == im.getPixel(i, j)[0])) {
+				if (!(Math.abs(getPixel(i, j)[0] - im.getPixel(i, j)[0]) < 50)) {
 					return false;
 				}
 			}

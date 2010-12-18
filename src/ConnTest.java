@@ -10,7 +10,6 @@ public class ConnTest {
 		//co.insert("Draguignan", 20, 30);
 		
 		new Capture(1, 1, "abc");
-		//new Capture(0, "im2");
 		
 	}
 
