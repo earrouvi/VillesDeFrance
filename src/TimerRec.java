@@ -24,7 +24,8 @@ public class TimerRec {
 	}
 	
 	public boolean storeInDB() {
-		
+		Connexion co = new Connexion();
+		co.insert(ville, mouseX, mouseY);
 		return true;
 	}
 

@@ -6,11 +6,12 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-//		Enregistrement e = new Enregistrement();
-//		e.init("ville");
-//		e.setVisible(true);
-		
-		TimerRec tr = new TimerRec("test");
+		Image im = new Image ("images/im1.jpg");
+		Image im2 = new Image ("images/im2.jpg");
+		//im.greyScale();
+		//im = new Image ("test3_grey.jpg");
+		boolean egale = im.compareTo(im2);
+		System.out.println(egale);
 		
 	}
 
