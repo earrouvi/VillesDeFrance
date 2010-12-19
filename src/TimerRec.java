@@ -9,7 +9,7 @@ public class TimerRec {
 	public TimerRec(String s) {
 		ville = s;
 		try {
-			Thread.currentThread().sleep(5000);
+			Thread.currentThread().sleep(7000);
 		}
 		catch(InterruptedException ie) {
 			ie.printStackTrace();

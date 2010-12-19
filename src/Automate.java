@@ -55,7 +55,7 @@ public class Automate extends Robot {
 		// grey scale transformation
 		try {
 			Image im = new Image("images/"+nom+".jpg");
-			im.greyScale("images/grey/"+nom+".png");
+			//im.greyScale("images/grey/"+nom);
 		}
 
 		// image out
@@ -64,7 +64,7 @@ public class Automate extends Robot {
 				if (out != null) {
 					out.close(); 
 				} 
-				System.exit(0); 
+				//System.exit(0); 
 			} 
 			catch (Throwable t) {} 
 		} 
