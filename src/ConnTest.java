@@ -9,7 +9,16 @@ public class ConnTest {
 		//Connexion co = new Connexion();
 		//co.insert("Draguignan", 20, 30);
 		
-		new Capture(1, 1, "abc");
+		//auto.capture(1, 1, "abc");
+		
+		Automate auto;
+		try {
+			auto = new Automate();
+			Thread.currentThread().sleep(500);
+			auto.click(600, 600);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 

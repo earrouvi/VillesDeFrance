@@ -1,11 +1,25 @@
 import java.awt.*;
-import java.io.*;
-import java.awt.image.*;
-import com.sun.image.codec.jpeg.*;
+import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 
-public class Capture extends Robot { 
+import com.sun.image.codec.jpeg.JPEGCodec;
+import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
-	public Capture(int type, int mode, String nom) throws AWTException { 
+public class Automate extends Robot {
+	
+	public Automate() throws AWTException {
+	}
+	
+	public void click(int x, int y) throws AWTException {
+		mouseMove(x, y);
+		mousePress(InputEvent.BUTTON1_MASK);
+		mouseRelease(InputEvent.BUTTON1_MASK);
+	}
+	
+	public void capture(int type, int mode, String nom) throws AWTException { 
 		// screen size and position inits
 		int x, y, xx, yy;
 		x = 270; y = 210; xx = 150; yy = 35;
@@ -36,7 +50,13 @@ public class Capture extends Robot {
 		} 
 		catch (Exception exc) {
 			exc.printStackTrace(); 
-		} 
+		}
+		
+		// grey scale transformation
+		try {
+			Image im = new Image("images/"+nom+".jpg");
+			im.greyScale("images/grey/"+nom+".png");
+		}
 
 		// image out
 		finally {
@@ -48,6 +68,6 @@ public class Capture extends Robot {
 			} 
 			catch (Throwable t) {} 
 		} 
-
 	}
+
 }
